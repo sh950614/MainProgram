@@ -15,11 +15,16 @@ namespace WebGame
         string porkpath = "~/Resources/poker/";
         Random random = new Random();
 
+
         protected void Page_Load(object sender, EventArgs e)
         {
             Label_Hello.Text = "Hello! "+Convert.ToString(Session["user"]);
             Label_Hello.Font.Size = FontUnit.Larger;
             Label_Hello.Font.Bold = true;
+            
+            Class_Game newGame = new Class_Game();
+            newGame.rank("InBetween", "score", GridView1);
+
             if (!IsPostBack)
             {
                 porkInitial();
@@ -32,11 +37,11 @@ namespace WebGame
             RandomPork(Image1);
             RandomPork(Image2);
             Image3.ImageUrl = porkpath + "bicycle_backs.jpg";
-
             Button_Start.Enabled = false;
             Button_Bet.Enabled = true;
             Button_Pass.Enabled = true;
-            Opening();
+
+            Opening();          
                   
         }
 
@@ -75,6 +80,24 @@ namespace WebGame
                 Label_Count.Font.Size = FontUnit.Larger;
                 Label_Count.Font.Bold = true;
             }
+            else
+            {
+                RandomPork(Image1);
+                RandomPork(Image2);
+                Image3.ImageUrl = porkpath + "bicycle_backs.jpg";
+
+                Button_Start.Enabled = false;
+                Button_Bet.Enabled = true;
+                Button_Pass.Enabled = true;
+                Opening();
+            }            
+        }
+
+        protected void Button_Record_Click(object sender, EventArgs e)
+        {
+            Class_Game newGame = new Class_Game();
+            newGame.record("InBetween", Convert.ToString(Session["user"]), "score", Convert.ToInt32(Label_MaxCoinRecord.Text));
+            newGame.rank("InBetween", "score", GridView1);
         }
 
 
@@ -196,6 +219,7 @@ namespace WebGame
         protected void RandomPork(Image image,bool IsRemove = true)
         {
             ArrayList pork = (ArrayList)Session["pork"];
+            
             int n= pork.Count;
             int m=random.Next(1, n+1) - 1;
             String picture;
@@ -207,6 +231,30 @@ namespace WebGame
                 pork.RemoveAt(m);
                 Session["pork"] = pork;
             }
+        }
+
+        protected void TextBox_BetCoin_TextChanged(object sender, EventArgs e)
+        {
+            if(Convert.ToInt32(TextBox_BetCoin.Text)<1000)
+            {
+                TextBox_BetCoin.Text = "1000";
+            }
+            else if(Convert.ToInt32(TextBox_BetCoin.Text)> Convert.ToInt32(Label_NowCoin.Text))
+            {
+                TextBox_BetCoin.Text = Label_NowCoin.Text;
+            }
+        }
+
+        protected void GridView1_RawDataBound(object sender, GridViewRowEventArgs e)
+        {
+            e.Row.Cells[1].Visible = false; //隱藏game欄位
+            e.Row.Cells[3].Visible = false; //隱藏recordtype欄位
+
+            if (e.Row.RowType == DataControlRowType.Header)
+            {
+                GridView1.Columns[4].HeaderText = "score";
+            }
+
         }
     }  
 

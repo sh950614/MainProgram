@@ -4,9 +4,13 @@
     <asp:Label ID="Label_Hello" runat="server" Text=""></asp:Label>
     <br />
     <br />
+    <asp:GridView ID="GridView1" runat="server" HorizontalAlign="Right" Width="600px" CellSpacing="1" OnRowDataBound="GridView1_RawDataBound">
+    </asp:GridView>
     <asp:Image ID="Image1" runat="server" ImageUrl="~/Resources/poker/bicycle_backs.jpg" Height="240px" Width="180px" />
     <asp:Image ID="Image3" runat="server" ImageUrl="~/Resources/poker/bicycle_backs.jpg" Height="240px" Width="180px" />
-    <asp:Image ID="Image2" runat="server" ImageUrl="~/Resources/poker/bicycle_backs.jpg" Height="240px" Width="180px" /><br />
+    <asp:Image ID="Image2" runat="server" ImageUrl="~/Resources/poker/bicycle_backs.jpg" Height="240px" Width="180px" />
+
+    <br />
     
     <!--
     <input type="image" src="Resources/poker/bicycle_backs.jpg" width="180" height="240" name="image1">
@@ -17,12 +21,13 @@
     <asp:Button ID="Button_Start" runat="server" OnClick="Button_Start_Click" Text="Start" />
     <asp:Button ID="Button_Bet" runat="server" OnClick="Button_Bet_Click" Text="Bet" />    
     <asp:Button ID="Button_Pass" runat="server" OnClick="Button_Pass_Click" Text="Pass" /> 
+    <asp:Button ID="Button_Record" runat="server" OnClick="Button_Record_Click" Text="Record and Leave" /> 
     <br />
     <asp:Label ID="Label3" runat="server" Text="NowCoin: "></asp:Label>
     <asp:Label ID="Label_NowCoin" runat="server"  Text=50000></asp:Label>
     <br />
     <asp:Label ID="Label1" runat="server" Text="BetCoin: "></asp:Label>
-    <asp:TextBox ID="TextBox_BetCoin" runat="server" Text=1000></asp:TextBox>
+    <asp:TextBox ID="TextBox_BetCoin" runat="server" Text=1000 OnTextChanged="TextBox_BetCoin_TextChanged"></asp:TextBox>
     <br />
     <asp:Label ID="Label2" runat="server" Text="MaxCoin: "></asp:Label>
     <asp:Label ID="Label_MaxCoinRecord" runat="server" Text=50000></asp:Label>

@@ -24,6 +24,15 @@ namespace WebGame
         protected global::System.Web.UI.WebControls.Label Label_Hello;
 
         /// <summary>
+        /// GridView1 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridView1;
+
+        /// <summary>
         /// Image1 控制項。
         /// </summary>
         /// <remarks>
@@ -76,6 +85,15 @@ namespace WebGame
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button_Pass;
+
+        /// <summary>
+        /// Button_Record 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button_Record;
 
         /// <summary>
         /// Label3 控制項。
