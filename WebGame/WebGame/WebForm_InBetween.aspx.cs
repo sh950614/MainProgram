@@ -248,12 +248,7 @@ namespace WebGame
         protected void GridView1_RawDataBound(object sender, GridViewRowEventArgs e)
         {
             e.Row.Cells[1].Visible = false; //隱藏game欄位
-            e.Row.Cells[3].Visible = false; //隱藏recordtype欄位
-
-            if (e.Row.RowType == DataControlRowType.Header)
-            {
-                GridView1.Columns[4].HeaderText = "score";
-            }
+            e.Row.Cells[3].Visible = false; //隱藏recordtype欄位          
 
         }
     }  
