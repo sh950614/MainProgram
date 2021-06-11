@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -44,6 +45,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Configuration.ConfigurationBuilders.Base, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Configuration.ConfigurationBuilders.Base.2.0.0\lib\Net471\Microsoft.Configuration.ConfigurationBuilders.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Configuration.ConfigurationBuilders.UserSecrets, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Configuration.ConfigurationBuilders.UserSecrets.2.0.0\lib\Net471\Microsoft.Configuration.ConfigurationBuilders.UserSecrets.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -128,9 +141,65 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="index.html" />
     <Content Include="js\prefixfree.min.js" />
+    <Content Include="pic\icon\InBetween.png" />
+    <Content Include="pic\poker\bicycle_backs.jpg" />
+    <Content Include="pic\poker\bicycle_front.jpg" />
+    <Content Include="pic\poker\p01.jpg" />
+    <Content Include="pic\poker\p02.jpg" />
+    <Content Include="pic\poker\p03.jpg" />
+    <Content Include="pic\poker\p04.jpg" />
+    <Content Include="pic\poker\p05.jpg" />
+    <Content Include="pic\poker\p06.jpg" />
+    <Content Include="pic\poker\p07.jpg" />
+    <Content Include="pic\poker\p08.jpg" />
+    <Content Include="pic\poker\p09.jpg" />
+    <Content Include="pic\poker\p10.jpg" />
+    <Content Include="pic\poker\p11.jpg" />
+    <Content Include="pic\poker\p12.jpg" />
+    <Content Include="pic\poker\p13.jpg" />
+    <Content Include="pic\poker\p14.jpg" />
+    <Content Include="pic\poker\p15.jpg" />
+    <Content Include="pic\poker\p16.jpg" />
+    <Content Include="pic\poker\p17.jpg" />
+    <Content Include="pic\poker\p18.jpg" />
+    <Content Include="pic\poker\p19.jpg" />
+    <Content Include="pic\poker\p20.jpg" />
+    <Content Include="pic\poker\p21.jpg" />
+    <Content Include="pic\poker\p22.jpg" />
+    <Content Include="pic\poker\p23.jpg" />
+    <Content Include="pic\poker\p24.jpg" />
+    <Content Include="pic\poker\p25.jpg" />
+    <Content Include="pic\poker\p26.jpg" />
+    <Content Include="pic\poker\p27.jpg" />
+    <Content Include="pic\poker\p28.jpg" />
+    <Content Include="pic\poker\p29.jpg" />
+    <Content Include="pic\poker\p30.jpg" />
+    <Content Include="pic\poker\p31.jpg" />
+    <Content Include="pic\poker\p32.jpg" />
+    <Content Include="pic\poker\p33.jpg" />
+    <Content Include="pic\poker\p34.jpg" />
+    <Content Include="pic\poker\p35.jpg" />
+    <Content Include="pic\poker\p36.jpg" />
+    <Content Include="pic\poker\p37.jpg" />
+    <Content Include="pic\poker\p38.jpg" />
+    <Content Include="pic\poker\p39.jpg" />
+    <Content Include="pic\poker\p40.jpg" />
+    <Content Include="pic\poker\p41.jpg" />
+    <Content Include="pic\poker\p42.jpg" />
+    <Content Include="pic\poker\p43.jpg" />
+    <Content Include="pic\poker\p44.jpg" />
+    <Content Include="pic\poker\p45.jpg" />
+    <Content Include="pic\poker\p46.jpg" />
+    <Content Include="pic\poker\p47.jpg" />
+    <Content Include="pic\poker\p48.jpg" />
+    <Content Include="pic\poker\p49.jpg" />
+    <Content Include="pic\poker\p50.jpg" />
+    <Content Include="pic\poker\p51.jpg" />
+    <Content Include="pic\poker\p52.jpg" />
     <Content Include="WebForm_GameSelection.aspx" />
     <Content Include="WebForm_InBetween.aspx" />
     <Content Include="WebForm_Login.aspx" />
+    <None Include="Properties\PublishProfiles\WebGame20210611084607 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -269,7 +338,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>50316</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://localhost:44343/</IISUrl>
+          <IISUrl>http://192.168.0.108:44343/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
@@ -284,7 +353,10 @@
       <ErrorText>此專案參考這部電腦上所缺少的 NuGet 套件。請啟用 NuGet 套件還原，以下載該套件。如需詳細資訊，請參閱 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的檔案是 {0}。</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.targets'))" />
   </Target>
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

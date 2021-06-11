@@ -12,7 +12,7 @@ namespace WebGame
     public partial class WebForm_InBetween : System.Web.UI.Page
     {
         
-        string porkpath = "~/Resources/poker/";
+        string porkpath = "~/pic/poker/";
         Random random = new Random();
 
 
@@ -98,6 +98,9 @@ namespace WebGame
             Class_Game newGame = new Class_Game();
             newGame.record("InBetween", Convert.ToString(Session["user"]), "score", Convert.ToInt32(Label_MaxCoinRecord.Text));
             newGame.rank("InBetween", "score", GridView1);
+            porkInitial();
+            coinInitial();
+            Label_Count.Text = "重新開局!";
         }
 
 
