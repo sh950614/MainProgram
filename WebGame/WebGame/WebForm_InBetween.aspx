@@ -9,7 +9,8 @@
     <asp:Image ID="Image1" runat="server" ImageUrl="~/pic/poker/bicycle_backs.jpg" Height="240px" Width="180px" />
     <asp:Image ID="Image3" runat="server" ImageUrl="~/pic/poker/bicycle_backs.jpg" Height="240px" Width="180px" />
     <asp:Image ID="Image2" runat="server" ImageUrl="~/pic/poker/bicycle_backs.jpg" Height="240px" Width="180px" />
-
+    
+    
     <br />
     
     <!--
@@ -35,7 +36,17 @@
     <br />
     <asp:Label ID="Label_Count" runat="server"></asp:Label>
     <br />
-    <asp:Label ID="Label_Result" runat="server"></asp:Label>   
+    <asp:Label ID="Label_Result" runat="server"></asp:Label>
+    
+    <br />
+    <br />
+    <asp:Label ID="Label4" runat="server" Text="Battle Room: "></asp:Label> 
+     <br />
+    <asp:Button ID="Button_Build" runat="server" OnClick="Button_Build_Click" Text="Build Room" /> 
+
+    <br />
+    <asp:ListBox ID="ListBox_BattleRoom" runat="server" OnSelectedIndexChanged="ListBox_BattleRoom_SelectedIndexChanged"></asp:ListBox>
+
 
    
 
