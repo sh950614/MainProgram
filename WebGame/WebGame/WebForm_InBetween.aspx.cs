@@ -254,6 +254,17 @@ namespace WebGame
             e.Row.Cells[3].Visible = false; //隱藏recordtype欄位          
 
         }
+
+        protected void Button_Build_Click(object sender, EventArgs e)
+        {
+            ListBox_BattleRoom.Items.Add((ListBox_BattleRoom.Items.Count+1).ToString("000"));            
+            
+        }
+
+        protected void ListBox_BattleRoom_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }  
 
 }

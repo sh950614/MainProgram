@@ -78,3 +78,7 @@ G:\project\WebGame\WebGame\WebGame\bin\EntityFramework.dll
 G:\project\WebGame\WebGame\WebGame\bin\EntityFramework.SqlServer.dll
 G:\project\WebGame\WebGame\WebGame\bin\EntityFramework.xml
 G:\project\WebGame\WebGame\WebGame\bin\EntityFramework.SqlServer.xml
+G:\project\WebGame\WebGame\WebGame\bin\Microsoft.Configuration.ConfigurationBuilders.Base.dll
+G:\project\WebGame\WebGame\WebGame\bin\Microsoft.Configuration.ConfigurationBuilders.UserSecrets.dll
+G:\project\WebGame\WebGame\WebGame\bin\Microsoft.Configuration.ConfigurationBuilders.Base.xml
+G:\project\WebGame\WebGame\WebGame\bin\Microsoft.Configuration.ConfigurationBuilders.UserSecrets.xml
