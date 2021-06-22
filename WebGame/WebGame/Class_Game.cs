@@ -49,9 +49,8 @@ namespace WebGame
             games = dBManager.getRecord(item,table,condition);
             gridView.DataSource = games;           
             gridView.DataBind();
-        }
+        }      
 
-      
 
     }
 }
