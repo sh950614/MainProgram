@@ -11,7 +11,10 @@ namespace WebGame
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Convert.ToString(Session["game"]) == "")
+            {
+                Response.Redirect("WebForm_GameSelection");
+            }
         }
 
         protected void Button_Login_Click(object sender, EventArgs e)
