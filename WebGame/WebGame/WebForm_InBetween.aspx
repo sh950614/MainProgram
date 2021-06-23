@@ -15,7 +15,7 @@
 .Label_header{
     position: absolute;
 	top: calc(10% - 75px);
-	left: calc(10% - 50px);
+	left: calc(5% - 50px);
 	height: 150px;
 	width: 350px;
 	padding: 10px;
@@ -68,7 +68,6 @@
     z-index: 2;
 }    
 
-
 .OtherObject{
 	position: absolute;
 	top: calc(45% - 75px);
@@ -120,8 +119,7 @@
                 </div> 
             </ContentTemplate>            
             <Triggers>                
-                <asp:AsyncPostBackTrigger ControlID="Timer_RoomUser" EventName="Tick" />
-                <asp:AsyncPostBackTrigger ControlID="Timer_GameProcess" EventName="Tick" /> 
+                <asp:AsyncPostBackTrigger ControlID="Timer_Status" EventName="Tick" /> 
             </Triggers>
         </asp:UpdatePanel>
 
@@ -188,15 +186,7 @@
     
         <asp:Timer ID="Timer_Status" runat="server" OnTick="Timer_Status_Tick">
         </asp:Timer>
-
-        <asp:Timer ID="Timer_RoomUser" runat="server" OnTick="Timer_RoomUser_Tick">
-        </asp:Timer>
-
-        <asp:Timer ID="Timer_GameProcess" runat="server" OnTick="Timer_GameProcess_Tick">
-        </asp:Timer>
         
     </form> 
 
 <body>
-
-</html>
